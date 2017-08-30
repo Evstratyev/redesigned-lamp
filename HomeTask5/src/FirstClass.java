@@ -16,16 +16,15 @@ public class FirstClass {
 
         System.out.println("");
 
-        for (int i = 0; i < array.length - 1; i++) {
+        int buf = array[0];
+        for (int i = 1; i < array.length - 1; i++) {
 
-            if (array[i] < array[i+1]){
-                int a = array[i];
-                array[i] = array[i+1];
-                array[i+1] = a;
+            if (buf > array[i]) {
+                buf = array[i];
             }
         }
 
-        System.out.println("Минимальное значение массива " +array[array.length - 1]);
+        System.out.println("Минимальное значение массива " + buf);
 
         System.out.println("");
 
@@ -35,19 +34,17 @@ public class FirstClass {
 
         System.out.println("");
 
-        int m, z;
-        int q = 0;
-        while (q < array.length * (array.length - 1)) {
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] > array[i + 1]) {
-                    z = array[i];
-                    m = array[i + 1];
-                    array[i + 1] = z;
-                    array[i] = m;
+        for (int i = array.length; i != 0; i--) {
+
+            for (int j = 0; j != i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int buffer = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = buffer;
                 }
-                q++;
             }
         }
+        
         System.out.print("Сортировка 'пузырьком': ");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
