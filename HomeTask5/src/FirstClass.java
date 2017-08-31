@@ -9,7 +9,7 @@ public class FirstClass {
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 100);
 
-            if (array[i] % 3 == 0 && array[i] != 0) {
+            if (array[i] % 3 == 0 ) {
                 System.out.println(+array[i] + "" + " кратно 3");
             }
         }
